@@ -1,0 +1,262 @@
+[
+    {
+        "question": "What is the primary function of Root Servers in the DNS hierarchy?",
+        "options": {
+            "A": "To facilitate domain name registration for users",
+            "B": "To manage Top-Level Domains (TLDs) at the top of the DNS hierarchy",
+            "C": "To store previously resolved DNS queries for efficiency",
+            "D": "To synchronize DNS data between DNS servers"
+        },
+        "correct_answer": "B",
+        "explanation": "Root Servers are at the top of the DNS hierarchy and are responsible for managing Top-Level Domains (TLDs), which is essential for resolving domain names to IP addresses.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "Which of the following DNS operations involves storing previously resolved DNS queries to improve efficiency?",
+        "options": {
+            "A": "Name Resolution",
+            "B": "Zone Transfers",
+            "C": "Caching",
+            "D": "SMTP"
+        },
+        "correct_answer": "C",
+        "explanation": "Caching is the process of storing previously resolved DNS queries to improve efficiency, reducing the need for repeated DNS lookups and improving the overall performance of the DNS system.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary function of the Internet Control Message Protocol within the IP layer?",
+        "options": {
+            "A": "Routing data packets between devices",
+            "B": "Error reporting and diagnostic functions",
+            "C": "Assigning 32-bit IP addresses",
+            "D": "Ensuring reliable data transfer"
+        },
+        "correct_answer": "B",
+        "explanation": "ICMP is used primarily for error reporting and diagnostic functions, operating within the IP layer to handle these tasks.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What type of notation is used to express 32-bit IP addresses in the context of IP addressing?",
+        "options": {
+            "A": "Binary notation",
+            "B": "Hexadecimal notation",
+            "C": "Dotted-decimal notation",
+            "D": "Octal notation"
+        },
+        "correct_answer": "C",
+        "explanation": "32-bit IP addresses are expressed in dotted-decimal notation, which is a human-readable format for representing IP addresses (e.g., 192.168.1.1).",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary benefit of using switches in a network due to their efficiency?",
+        "options": {
+            "A": "Increased network congestion",
+            "B": "Reduced data transmission",
+            "C": "Minimized network congestion by only sending data to the intended recipient",
+            "D": "Higher latency"
+        },
+        "correct_answer": "C",
+        "explanation": "Switches minimize network congestion by only sending data to the intended recipient, reducing unnecessary data transmission and increasing overall network efficiency.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "At which layer of the network model does a bridge operate, and what is its primary function?",
+        "options": {
+            "A": "Physical layer (Layer 1) - Routing",
+            "B": "Network layer (Layer 3) - Switching",
+            "C": "Data link layer (Layer 2) - Routing",
+            "D": "Data link layer (Layer 2) - Connecting multiple network segments"
+        },
+        "correct_answer": "D",
+        "explanation": "A bridge operates at the data link layer (Layer 2) and is used to connect multiple network segments, allowing data to be forwarded between them.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary responsibility of the Internet Layer in the TCP/IP Protocol Suite?",
+        "options": {
+            "A": "Error detection and correction",
+            "B": "Routing packets across different networks and providing logical addressing",
+            "C": "Establishing and terminating connections between devices",
+            "D": "Providing a interface for applications to communicate with the network"
+        },
+        "correct_answer": "B",
+        "explanation": "The Internet Layer is responsible for routing packets across different networks and providing logical addressing (IP addresses) to devices, making option B the correct answer.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "Which of the following protocols is used for error detection and reporting in the Internet Layer?",
+        "options": {
+            "A": "TCP (Transmission Control Protocol)",
+            "B": "UDP (User Datagram Protocol)",
+            "C": "ICMP (Internet Control Message Protocol)",
+            "D": "HTTP (Hypertext Transfer Protocol)"
+        },
+        "correct_answer": "C",
+        "explanation": "ICMP is used for error detection and reporting in the Internet Layer, making option C the correct answer. It is used to send error messages and operational information between devices in a network.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary function of the Presentation Layer in the TCP/IP Protocol Suite?",
+        "options": {
+            "A": "Routing and switching of data packets",
+            "B": "Data translation, encryption, and compression",
+            "C": "Error detection and correction",
+            "D": "Network interface and hardware management"
+        },
+        "correct_answer": "B",
+        "explanation": "The Presentation Layer is responsible for converting data into a format that can be understood by applications, which includes data translation, encryption, and compression.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "Which of the following is an example of a protocol that operates at the Application Layer of the TCP/IP Protocol Suite?",
+        "options": {
+            "A": "NetBIOS",
+            "B": "SSL/TLS",
+            "C": "Both A and B",
+            "D": "Neither A nor B"
+        },
+        "correct_answer": "C",
+        "explanation": "NetBIOS is an example of a protocol that operates at the Application Layer, and SSL/TLS is an example of a protocol that operates at the Presentation Layer, but NetBIOS is also mentioned as an example of synchronization and checkpointing which can be related to Application Layer, hence both are correct in different contexts.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary difference in the number of layers between the OSI and TCP/IP network models?",
+        "options": {
+            "A": "OSI has 4 layers, while TCP/IP has 7 layers",
+            "B": "OSI has 7 layers, while TCP/IP has 4 layers",
+            "C": "OSI has 5 layers, while TCP/IP has 3 layers",
+            "D": "OSI and TCP/IP have the same number of layers"
+        },
+        "correct_answer": "B",
+        "explanation": "The OSI model has 7 layers, while the TCP/IP model has 4 layers, providing a more concise representation of the networking process.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "Which of the following layers is NOT one of the first three layers in the OSI model?",
+        "options": {
+            "A": "Physical Layer",
+            "B": "Data Link Layer",
+            "C": "Transport Layer",
+            "D": "Network Layer"
+        },
+        "correct_answer": "C",
+        "explanation": "The first three layers in the OSI model are the Physical Layer, Data Link Layer, and Network Layer. The Transport Layer is the fourth layer in the OSI model.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary function of routers in network communication?",
+        "options": {
+            "A": "To connect devices within a local area network",
+            "B": "To direct data between different networks",
+            "C": "To split combined signals into individual data streams",
+            "D": "To manage network protocols"
+        },
+        "correct_answer": "B",
+        "explanation": "Routers are responsible for directing data between different networks, ensuring it reaches the correct destination.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "At which end of the network communication process does the splitting of combined signals into individual data streams occur?",
+        "options": {
+            "A": "At the transmitting end",
+            "B": "At the receiving end",
+            "C": "At the routing end",
+            "D": "At the switching end"
+        },
+        "correct_answer": "B",
+        "explanation": "The combined signal is split into individual data streams at the receiving end.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary function of a gateway in a network?",
+        "options": {
+            "A": "To connect devices within a single network",
+            "B": "To broadcast data to all devices on a network",
+            "C": "To connect different networks with different protocols",
+            "D": "To forward data using MAC addresses"
+        },
+        "correct_answer": "C",
+        "explanation": "A gateway connects different networks with different protocols, enabling communication between them.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "Which protocol is the foundation of the internet, as mentioned in the context of network protocols?",
+        "options": {
+            "A": "HTTP",
+            "B": "FTP",
+            "C": "TCP/IP",
+            "D": "UDP"
+        },
+        "correct_answer": "C",
+        "explanation": "The Transmission Control Protocol/Internet Protocol (TCP/IP) is the foundation of the internet, providing the basis for communication between devices on the internet.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary purpose of understanding transmission modes in network design?",
+        "options": {
+            "A": "To optimize network security",
+            "B": "To ensure data flows in a manner that meets application requirements",
+            "C": "To improve network scalability",
+            "D": "To reduce network latency"
+        },
+        "correct_answer": "B",
+        "explanation": "Understanding transmission modes is crucial to ensure that data flows in a manner that meets the requirements of the application or service, which is the primary purpose of network design",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "In the context of network communication systems, what is the relationship between transmission modes and application requirements?",
+        "options": {
+            "A": "Transmission modes are independent of application requirements",
+            "B": "Transmission modes are dependent on network topology",
+            "C": "Transmission modes must be aligned with application requirements",
+            "D": "Transmission modes are only relevant to network hardware"
+        },
+        "correct_answer": "C",
+        "explanation": "Transmission modes must be aligned with application requirements to ensure that data flows in a manner that meets the needs of the application or service",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "What is the primary purpose of using Variable-Length Subnet Masks (VLSM) in a network address space?",
+        "options": {
+            "A": "To reduce the number of available IP addresses",
+            "B": "To increase the security of the network by using fixed-length subnet masks",
+            "C": "To allow subnet masks of varying lengths within a single network address space",
+            "D": "To improve the performance of the network by reducing the number of subnets"
+        },
+        "correct_answer": "C",
+        "explanation": "VLSM allows for more efficient use of IP addresses by enabling subnet masks of varying lengths within a single network address space, which is a key feature of Classless Inter-Domain Routing (CIDR).",
+        "source": "PDF",
+        "difficulty": "Hard"
+    },
+    {
+        "question": "In the context of Classless Inter-Domain Routing (CIDR), what does the prefix notation 192.168.1.0/24 represent?",
+        "options": {
+            "A": "The IP address of a specific host on the network",
+            "B": "The subnet mask of the network",
+            "C": "The network portion and the remaining bits for hosts",
+            "D": "The default gateway of the network"
+        },
+        "correct_answer": "C",
+        "explanation": "The prefix notation 192.168.1.0/24 represents the network portion (192.168.1.0) and the number of network bits (24), which specifies the remaining bits for hosts.",
+        "source": "PDF",
+        "difficulty": "Hard"
+    }
+]
