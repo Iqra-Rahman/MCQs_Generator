@@ -13,10 +13,11 @@ import {
   Chip,
   Divider,
 } from "@mui/material";
+import "./app.css";
 
 const App = () => {
   const [pdfFile, setPdfFile] = useState(null);
-  const [numMcqs, setNumMcqs] = useState(100);
+  const [numMcqs, setNumMcqs] = useState(10);
   const [loading, setLoading] = useState(false);
   const [mcqs, setMcqs] = useState([]);
   const [keywords, setKeywords] = useState([]);
@@ -53,14 +54,47 @@ const App = () => {
     }
   };
 
+  // ✅ Function to download MCQs as a text file
+  const handleDownload = () => {
+    if (mcqs.length === 0) return;
+
+    const content = mcqs
+      .map(
+        (mcq, idx) =>
+          `${idx + 1}. ${mcq.question}\nA) ${mcq.options?.A}\nB) ${
+            mcq.options?.B
+          }\nC) ${mcq.options?.C}\nD) ${mcq.options?.D}\nCorrect Answer: ${
+            mcq.correct_answer
+          }\nExplanation: ${mcq.explanation}\nDifficulty: ${
+            mcq.difficulty
+          }\n\n`
+      )
+      .join("");
+
+    const blob = new Blob([content], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "generated_mcqs.txt";
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
+
   return (
-    <Container maxWidth="md" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        PDF MCQ Generator
+    <Container maxWidth="md" className="glass-container">
+      <Typography variant="h3" className="app-title">
+         AI-Powered PDF MCQ Generator 
       </Typography>
 
-      <Box sx={{ mb: 2 }}>
-        <input type="file" accept=".pdf" onChange={handleFileChange} />
+      <Box className="upload-box">
+        <input
+          type="file"
+          accept=".pdf"
+          onChange={handleFileChange}
+          className="file-input"
+        />
       </Box>
 
       <TextField
@@ -69,46 +103,70 @@ const App = () => {
         value={numMcqs}
         onChange={(e) => setNumMcqs(parseInt(e.target.value) || 100)}
         fullWidth
-        sx={{ mb: 2 }}
+        className="text-field"
       />
 
-      <Button variant="contained" onClick={handleSubmit} disabled={loading}>
-        Generate
+      <Button
+        variant="contained"
+        className="generate-btn"
+        onClick={handleSubmit}
+        disabled={loading}
+      >
+        {loading ? "Generating..." : "Generate MCQs"}
       </Button>
 
-      {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
-      {loading && <CircularProgress sx={{ mt: 2 }} />}
+      {error && <Typography color="error" className="error-text">{error}</Typography>}
+      {loading && <CircularProgress className="loader" />}
 
       {keywords.length > 0 && (
-        <Box sx={{ mt: 4 }}>
-          <Typography variant="h6">Extracted Keywords:</Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+        <Box className="keywords-section">
+          <Typography variant="h5" className="section-title">
+            Extracted Keywords
+          </Typography>
+          <Box className="keywords-box">
             {keywords.map((kw, idx) => (
-              <Chip key={idx} label={kw} variant="outlined" />
+              <Chip key={idx} label={kw} className="keyword-chip" />
             ))}
           </Box>
         </Box>
       )}
+      {/* ✅ Download Button */}
+          <Button
+        variant="contained"
+        className="generate-btn"
+        onClick={handleDownload}
+        disabled={mcqs.length === 0}
+        style={{
+          marginTop: "15px",
+          background: "#545454",
+          opacity: mcqs.length === 0 ? 0.5 : 1,
+          pointerEvents: mcqs.length === 0 ? "none" : "auto",
+        }}
+      >
+            Download Generated MCQs
+          </Button>
 
       {mcqs.length > 0 && (
-        <Box sx={{ mt: 4 }}>
-          <Typography variant="h6">Generated MCQs:</Typography>
-          <List>
+        <Box className="mcq-section">
+          <Typography variant="h5" className="section-title">
+            Generated MCQs
+          </Typography>
+          <List className="mcq-list">
             {mcqs.map((mcq, idx) => (
               <React.Fragment key={idx}>
-                <ListItem>
+                <ListItem className="mcq-item">
                   <ListItemText
                     primary={`${idx + 1}. ${mcq.question}`}
                     secondary={
-                      <>
-                        A: {mcq.options?.A}<br />
-                        B: {mcq.options?.B}<br />
-                        C: {mcq.options?.C}<br />
-                        D: {mcq.options?.D}<br />
+                      <div className="mcq-options">
+                        <p>A: {mcq.options?.A}</p>
+                        <p>B: {mcq.options?.B}</p>
+                        <p>C: {mcq.options?.C}</p>
+                        <p>D: {mcq.options?.D}</p>
                         <strong>Correct: {mcq.correct_answer}</strong><br />
-                        Explanation: {mcq.explanation}<br />
-                        Difficulty: {mcq.difficulty}
-                      </>
+                        <span>Explanation: {mcq.explanation}</span><br />
+                        {/* <span>Difficulty: {mcq.difficulty}</span> */}
+                      </div>
                     }
                   />
                 </ListItem>
@@ -116,6 +174,7 @@ const App = () => {
               </React.Fragment>
             ))}
           </List>
+          
         </Box>
       )}
     </Container>

@@ -1,42 +1,298 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Minimalist Classy Theme with Layered Grey Background */
+body {
+  /* This creates a base gradient for the deepest layer, simulating the background effect */
+  background: linear-gradient(70deg, #1f1d1d 0%, #5e5e5e 100%);
+  font-family: "Segoe UI", sans-serif;
+  color: #E4E4E5; /* Lightest color for text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden; /* Hide horizontal scroll only */
+overflow-y: auto; /* Hide overflow from layered background */
+  position: relative;
+  z-index: 1; /* Ensure body content is above background layers */
+}
+
+/* Layered Background Effect - using multiple absolute pseudo-elements */
+body::before,
+body::after,
+.layer-1,
+.layer-2,
+.layer-3 {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place behind body content */
+}
+
+/* Layer 1 - Deepest, darkest wave */
+body::before {
+  background: #3C3C3C;
+  clip-path: ellipse(150% 100% at 50% 150%); /* Organic wave shape */
+  transform: translateY(20%); /* Offset for layering effect */
+}
+
+/* Layer 2 - Slightly lighter wave */
+body::after {
+  background: #343434;
+  clip-path: ellipse(150% 100% at 50% 140%);
+  transform: translateY(10%);
+}
+
+/* Additional Layers for more depth - you can add more if needed */
+.layer-1 { /* You'd need to add these as actual divs in HTML or generate more pseudo-elements */
+  background: #7A7A7A;
+  clip-path: ellipse(150% 100% at 50% 130%);
+  transform: translateY(5%);
+}
+
+.layer-2 {
+  background: #949494;
+  clip-path: ellipse(150% 100% at 50% 120%);
+  transform: translateY(2%);
+}
+
+.layer-3 {
+  background: #BEBEBE;
+  clip-path: ellipse(150% 100% at 50% 110%);
+  transform: translateY(0%);
+}
+
+
+/* Glass Container - central element */
+.glass-container {
+       background: rgb(0 0 0 / 0%);
+    border: 1px solid rgb(0 0 0 / 0%); /* Subtle light border */
+  backdrop-filter: blur(15px); /* Stronger blur for distinct glass effect */
+  border-radius: 20px; /* Slightly more rounded */
+  padding: 2.5rem 3rem; /* Increased padding */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); /* More prominent shadow */
+  animation: fadeIn 0.8s ease-in-out;
+  position: relative;
+  z-index: 2;
+  max-width: 500px; /* Constrain width for a focused look */
+  width: 90%;
+}
+.text-field{
+  border-color: #E4E4E5 !important;
+  color: #E4E4E5 !important;
+}
+
+.app-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem; /* More space below title */
+  font-size: 2.2rem; /* Slightly larger title */
+  color: #E4E4E5;
+  letter-spacing: 1.8px; /* Tighter letter spacing for elegance */
+}
+
+/* Input & Button Base Styles */
+input[type="text"],
+input[type="file"] {
+    background-color: #545454 ; /* Medium dark grey for input fields */
+    border: 1px solid #7A7A7A; /* Slightly darker border */
+    color: #E4E4E5; /* Lightest text for contrast */
+    padding: 0.8rem 1rem;
+    border-radius: 10px; /* Rounded corners */
+    width: calc(100% - 2rem); /* Account for padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #BEBEBE; /* Lighter border on focus */
+    box-shadow: 0 0 0 3px rgba(190, 190, 190, 0.3); /* Subtle glow */
+}
+
+.upload-box {
+  margin: 1.5rem 0;
+}
+
+.file-input {
+  cursor: pointer;
+  /* Additional styling is handled by the general input[type="file"] */
+}
+
+.file-input::-webkit-file-upload-button {
+  visibility: hidden; /* Hide default button */
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.file-input::before {
+  content: 'Choose File'; /* Custom button text */
+  display: inline-block;
+  background: #7A7A7A; /* Darker button for subtlety */
+  color: #E4E4E5;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.file-input:hover::before {
+  background: #949494; /* Lighter on hover */
+}
+
+
+.generate-btn {
+  background: #000000 !important; /* Light grey for primary action */
+  color: #3C3C3C; /* Darkest text for contrast */
+  font-weight: 700; /* Bolder text */
+  padding: 1rem; /* More padding */
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 2rem; /* More space above button */
+  transition: all 0.3s ease-in-out;
+  border: none; /* No default border */
+  cursor: pointer;
+  font-size: 1.1rem;
+  letter-spacing: 0.8px;
+}
+
+.generate-btn:hover {
+  background: #1c1c1c !important; /* Lightest on hover */
+  transform: translateY(-1px); /* Slight lift */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
+}
+
+.error-text {
+  margin-top: 15px;
+  color: #BEBEBE; /* Use a light grey for error text to keep theme */
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.loader {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #949494; /* Subtle loader color */
+}
+
+/* Keyword and MCQ Sections */
+.keywords-section,
+.mcq-section {
+  margin-top: 3rem; /* More vertical spacing */
+  border-top: 1px solid rgba(122, 122, 122, 0.4); /* Subtle separator */
+  padding-top: 2rem;
+}
+
+.section-title {
+  color: #E4E4E5;
+  font-weight: 600; /* Bolder title */
+  font-size: 1.3rem; /* Slightly larger */
+  margin-bottom: 1.5rem; /* More space below title */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.keywords-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* Increased gap */
+  justify-content: center; /* Center the chips */
 }
 
-@keyframes logo-spin {
+.keyword-chip {
+  background: #545454; /* Darker background for chips */
+  border: 1px solid #7A7A7A;
+  color: #E4E4E5;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem; /* More padding */
+  border-radius: 20px; /* Pill shape */
+  transition: all 0.2s ease;
+}
+
+.keyword-chip:hover {
+    background: #7A7A7A; /* Lighter on hover */
+    cursor: pointer;
+}
+
+.mcq-list {
+  background: rgba(60, 60, 60, 0.5); /* Slightly lighter glass effect for list */
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(150, 150, 150, 0.2); /* Fainter border */
+}
+
+.mcq-item {
+  color: #E4E4E5;
+  margin-bottom: 1.2rem; /* More spacing between MCQs */
+  font-weight: 500;
+}
+
+.mcq-item:last-child {
+    margin-bottom: 0;
+}
+
+.mcq-options p {
+  margin: 0.5rem 0 0.5rem 1.5rem; /* Indent options */
+  font-size: 0.95rem;
+  color: #BEBEBE; /* Lighter grey for options */
+  line-height: 1.4;
+}
+
+/* Smooth Entry Animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .glass-container {
+    padding: 1.5rem;
+    border-radius: 15px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .app-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .generate-btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .keywords-box {
+    gap: 0.5rem;
+  }
+  .keyword-chip {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .mcq-list {
+    padding: 1rem;
+  }
+  .mcq-item {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .mcq-options p {
+    font-size: 0.85rem;
+    margin: 0.4rem 0 0.4rem 1rem;
+  }
 }
