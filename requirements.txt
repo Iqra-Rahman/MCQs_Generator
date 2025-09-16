@@ -1,12 +1,21 @@
+# Upgrade pip first
+pip>=25.2
+
+# Core FastAPI backend
 fastapi==0.111.1
 uvicorn[standard]==0.23.2
 python-dotenv==1.0.1
-pandas==2.1.1
-tqdm==4.66.1
 pydantic==2.6.2
-requests==2.31.0
+
+# Data processing
+pandas==2.1.1
 numpy==1.26.4
+tqdm==4.66.1
+scikit-learn==1.3.2
 PyPDF2==3.0.1
+
+# AI / embeddings / PDF MCQ generation
 langchain==0.1.3
 groq==0.1.5
-scikit-learn==1.3.2
+torch>=2.3.1
+transformers>=4.42.2
