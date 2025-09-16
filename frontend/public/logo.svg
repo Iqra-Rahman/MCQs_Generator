@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="55" fill="#4f46e5" stroke="#3730a3" stroke-width="4"/>
+
+  <!-- Question Mark -->
+  <path d="M60 35 
+           C50 35, 50 50, 60 50 
+           C70 50, 70 65, 60 65" 
+        stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Dot of Question Mark -->
+  <circle cx="60" cy="75" r="4" fill="#fff"/>
+
+  <!-- Answer options -->
+  <circle cx="35" cy="95" r="5" fill="#fff"/>
+  <circle cx="60" cy="95" r="5" fill="#fff"/>
+  <circle cx="85" cy="95" r="5" fill="#fff"/>
+</svg>
