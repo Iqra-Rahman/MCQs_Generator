@@ -1,4 +1,3 @@
-
 # Use Python 3.11 slim image
 FROM python:3.11-slim
 
@@ -24,4 +23,4 @@ COPY data/ ./data
 EXPOSE 8000
 
 # Start FastAPI app using gunicorn
-CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "backend.app:app", "--bind", "0.0.0.0:8000", "--workers", "2"]
+CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "backend.app:app", "--bind", "0.0.0.0:8000", "--workers", "1", "--log-level", "debug"]
