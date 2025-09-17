@@ -1,8 +1,8 @@
 import os
 import tempfile
 from fastapi import FastAPI, UploadFile, File, Form
-from src.generator import PDFMCQGenerator
-from src.utils import save_to_json  # optional
+from .src.generator import PDFMCQGenerator
+from .src.utils import save_to_json  # optional
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="PDF MCQ Generator API", version="1.0")
