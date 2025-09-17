@@ -13,3 +13,4 @@ PyPDF2==3.0.1
 # AI / embeddings / PDF MCQ generation
 langchain==0.2.14
 langchain-google-genai  
+langchain-community

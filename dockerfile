@@ -19,6 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/ ./backend
 COPY data/ ./data
 
+# Add backend to PYTHONPATH for absolute imports
+ENV PYTHONPATH=/app/backend
+
 # Expose port
 EXPOSE 8000
 
