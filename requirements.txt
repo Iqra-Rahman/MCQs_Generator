@@ -16,6 +16,7 @@ PyPDF2==3.0.1
 
 # AI / embeddings / PDF MCQ generation
 langchain
-groq==0.30.0
+google-generativeai==0.7.0
+
 # torch>=2.3.1
 # transformers>=4.42.2
