@@ -4,7 +4,7 @@ fastapi==0.111.1
 # uvicorn[standard]==0.23.2
 gunicorn  # ✅ add gunicorn for production process management
 python-dotenv==1.0.1
-pydantic==2.6.2
+pydantic==1.10.11
 
 # Data processing
 tqdm==4.66.1
