@@ -1,5 +1,3 @@
-# Upgrade pip
-pip>=25.2
 
 # Core FastAPI backend
 fastapi==0.111.1
