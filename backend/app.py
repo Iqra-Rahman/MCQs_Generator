@@ -7,7 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="PDF MCQ Generator API", version="1.0")
 
-origins = ["http://localhost:5173", "http://localhost:3000"]  # Add your frontend URL(s)
+origins = ["http://localhost:5173", "http://localhost:3000", "https://your-render-app-name.onrender.com"
+]  # Add your frontend URL(s)
 
 app.add_middleware(
     CORSMiddleware,
