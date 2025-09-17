@@ -1,9 +1,9 @@
 import json
 import re
-import pandas as pd  # Kept for potential future use, but not used now
+
 
 def should_exclude_chunk(chunk: str) -> bool:
-    """Check if chunk should be excluded (references, acknowledgements, etc.)"""
+    """(references, acknowledgements, etc.)"""
     ref_patterns = [
         r'References\s', r'Bibliography\s', r'Acknowledgements\s',
         r'et al\.\s+\(\d{4}\)', r'\[\d+\]\s+[A-Z][a-z]+,',

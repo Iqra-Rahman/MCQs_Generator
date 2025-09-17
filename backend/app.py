@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="PDF MCQ Generator API", version="1.0")
 
 origins = ["http://localhost:5173", "http://localhost:3000", "https://your-render-app-name.onrender.com"
-]  # Add your frontend URL(s)
+]  
 
 app.add_middleware(
     CORSMiddleware,
@@ -35,7 +35,7 @@ async def generate_questions(
 
     try:
         pdf_mcqs, keywords = generator.generate_questions(pdf_path, num_mcqs)
-        # Optionally save locally
+        
         # save_to_json(pdf_mcqs, "pdf_mcqs.json")
         return {"mcqs": pdf_mcqs, "keywords": keywords}
     finally:
@@ -44,5 +44,5 @@ async def generate_questions(
 
 if __name__ == "__main__":
     import uvicorn
-    # Run with: python app.py
+    
     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)

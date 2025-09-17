@@ -54,7 +54,7 @@ const App = () => {
     }
   };
 
-  // ✅ Function to download MCQs as a text file
+  // Function to download MCQs as a text file
   const handleDownload = () => {
     if (mcqs.length === 0) return;
 
@@ -130,7 +130,7 @@ const App = () => {
           </Box>
         </Box>
       )}
-      {/* ✅ Download Button */}
+      {/*  Download Button */}
           <Button
         variant="contained"
         className="generate-btn"

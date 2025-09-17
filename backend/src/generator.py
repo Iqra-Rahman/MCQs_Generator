@@ -15,7 +15,7 @@ from src.utils import should_exclude_chunk, clean_json_response, save_to_json
 
 class PDFMCQGenerator:
     def __init__(self, model="llama-3.3-70b-versatile", temperature=0.7):
-        """Initialize Groq-based MCQ generator"""
+        """Initialization"""
         self.client = Groq(
             api_key=GROQ_API_KEY,
         )
